@@ -12,7 +12,8 @@
 
 (function() {
 
-    let string = "Hello World!";
-    alert(string);
+    let userName = prompt("What is your name?");
+    alert(userName);
+    alert("Hello, " + userName);
 
 })();
