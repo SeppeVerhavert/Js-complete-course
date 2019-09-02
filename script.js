@@ -12,8 +12,10 @@
 
 (function() {
 
-    let userName = prompt("What is your name?");
-    alert(userName);
-    alert("Hello, " + userName);
-
+    let userName = confirm("Do you want cake?");
+    if (userName) {
+        alert("Congratz, you made the right choice!");
+    } else {
+        alert("More cake for me then :p !");
+    }
 })();
