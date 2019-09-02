@@ -10,12 +10,26 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
-
-    let userName = confirm("Do you want cake?");
-    if (userName) {
-        alert("Congratz, you made the right choice!");
+function askInfo() {
+    let userAge = prompt("What is your age?");
+    if (userAge != null) {
+        let userGender = prompt("What is your gender?");
+        if (userGender != null) {
+            let userTown = prompt("Where do you live?");
+            if (userGender != null) {
+                var userInfo = confirm(" is this info correct? " + userAge + " " + userGender + " " + userTown);
+                if(!userInfo) {
+                    askInfo();
+                }
+            } else {
+                askInfo();
+            }
+        } else {
+            askInfo();
+        }
     } else {
-        alert("More cake for me then :p !");
+        askInfo();
     }
-})();
+};
+
+askInfo();
