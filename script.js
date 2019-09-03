@@ -10,13 +10,24 @@
 // You will have time to focus on it later.
 
 (function () {
-    document.getElementById("run").addEventListener('click', calculateEven);
+    let numbersInput = document.getElementById("numbers").value;
+    document.getElementById("run").addEventListener('click', sortNumbers);
+    let array = [];
+    let sortedArray = [];
 
-    function calculateEven() {
-        for (let x = 0; x < 22; x++) {
-            if (x % 2 == 0) {
-                alert(x);
+    function sortNumbers() {
+        array = numbersInput.split(", ");
+        for (let i = 0; i < array.length; i++) {
+            let numberMin = 100;
+            for (let x = 0; x < array.length; x++) {
+                if (parseInt(array[x]) < numberMin) {
+                    numberMin = array[x];
+                }
             }
+            sortedArray[i] = parseInt(numberMin);
+            let minIndex = array.indexOf(numberMin);
+            array[minIndex] = "";
         }
+        alert(sortedArray);
     }
 })();
