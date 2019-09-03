@@ -1,6 +1,6 @@
 /* becode/javascript
  *
- * /02-maths/06-fizzbuzz/script.js - 2.6: fizzbuzz
+ * /03-colors/01-change-bcg-one/script.js - 3.1: couleur de fond (1)
  *
  * coded by leny@BeCode
  * started at 26/10/2018
@@ -10,17 +10,14 @@
 // You will have time to focus on it later.
 
 (function() {
+    let buttons = document.getElementsByTagName('button');
+    let html = document.getElementsByTagName('html')[0];
 
-    for (let x = 2; x < 100; x++) {
-        if (x % 3 === 0 && x % 5 === 0) {
-            console.log("fizzbuzz");    
-        } else if (x % 3 === 0) {
-            console.log("fizz");    
-        } else if (x % 5 === 0) {
-            console.log("buzz");    
-        } else {
-            console.log(x);
-        }
+    for (let x = 0; x < buttons.length; x++) {
+        buttons[x].addEventListener('click', changeColor);
     }
-
+    function changeColor() {
+        let color = this.innerText;
+        html.style.background = color;
+    }
 })();
