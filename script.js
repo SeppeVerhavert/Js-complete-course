@@ -12,10 +12,19 @@
 (function() {
     document.getElementById('run').addEventListener('click', changeColor);
     let html = document.getElementsByTagName('html')[0];
+    let colorArray = [];
 
     function changeColor() {
-        let input = document.getElementById('color').value;
-        let color = input;
+        generateRandomColor();
+        let color = "rgb(" + colorArray[0] + "," + colorArray[1] + "," + colorArray[2] + ")";
         html.style.background = color;
+    }
+
+    function generateRandomColor() {
+        colorArray = [];
+        for (let x = 0; x < 3; x++) {
+            let newcolor = Math.floor(Math.random()*255)
+            colorArray.push(newcolor);
+        }
     }
 })();
