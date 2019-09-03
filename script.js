@@ -10,34 +10,13 @@
 // You will have time to focus on it later.
 
 (function () {
-    let operators = document.getElementsByClassName('operator');
-    let output = document.getElementsByClassName('explain')[0];
-    let firstOperator = parseInt(document.getElementById("op-one").value);
-    let secondOperator = parseInt(document.getElementById("op-two").value);
-    let solution;
+    document.getElementById("run").addEventListener('click', calculateEven);
 
-    for (let x = 0; x < operators.length; x++) {
-        operators[x].addEventListener('click', checkId);
-    }
-
-    function checkId() {
-        switch (this.id) {
-            case "addition":
-                solution = firstOperator + secondOperator;
-                output.innerHTML = solution;
-                break;
-            case "substraction":
-                solution = firstOperator - secondOperator;
-                output.innerHTML = solution;
-                break;
-            case "multiplication":
-                solution = firstOperator * secondOperator;
-                output.innerHTML = solution;
-                break;
-            case "division":
-                solution = firstOperator / secondOperator;
-                output.innerHTML = solution;
-                break;
+    function calculateEven() {
+        for (let x = 0; x < 22; x++) {
+            if (x % 2 == 0) {
+                alert(x);
+            }
         }
     }
 })();
