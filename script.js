@@ -10,14 +10,12 @@
 // You will have time to focus on it later.
 
 (function() {
-    let buttons = document.getElementsByTagName('button');
+    document.getElementById('run').addEventListener('click', changeColor);
     let html = document.getElementsByTagName('html')[0];
 
-    for (let x = 0; x < buttons.length; x++) {
-        buttons[x].addEventListener('click', changeColor);
-    }
     function changeColor() {
-        let color = this.innerText;
+        let input = document.getElementById('color').value;
+        let color = input;
         html.style.background = color;
     }
 })();
