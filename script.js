@@ -9,21 +9,12 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
+
+    let target = document.getElementById('target');
     
-    document.getElementById('run').addEventListener('click', calculateAge);
-
-    function calculateAge() {
-        let yearInput = document.getElementById('dob-year').value;
-        let monthInput = document.getElementById('dob-month').value;
-        let dayInput = document.getElementById('dob-day').value;
-        let dateInput = new Date(monthInput  + ' ' + dayInput + ',' + yearInput + ' ' + '00:00');
-        
+    setInterval(function(){
         let date = new Date();
-        let newYear = new Date(date - dateInput);
-        let yearTotal = newYear.getFullYear() - 1970;
-        
-        alert(yearTotal);
-    }
-
+        target.innerHTML = date;
+    }, 1000);
 })();
