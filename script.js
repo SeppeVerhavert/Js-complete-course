@@ -10,16 +10,20 @@
 // You will have time to focus on it later.
 
 (function() {
+    
+    document.getElementById('run').addEventListener('click', calculateAge);
 
-    let target = document.getElementById('target');
-    let newDate = new Date('March 13, 08 17:20');
-    let hours = newDate.getHours();
-    let minutes = newDate.getMinutes();
-
-    if (hours >= 17 && minutes >= 30 || hours >= 18) {
-        target.innerHTML = "Good evening";
-    } else {
-        target.innerHTML = "Hello";
+    function calculateAge() {
+        let yearInput = document.getElementById('dob-year').value;
+        let monthInput = document.getElementById('dob-month').value;
+        let dayInput = document.getElementById('dob-day').value;
+        let dateInput = new Date(monthInput  + ' ' + dayInput + ',' + yearInput + ' ' + '00:00');
+        
+        let date = new Date();
+        let newYear = new Date(date - dateInput);
+        let yearTotal = newYear.getFullYear() - 1970;
+        
+        alert(yearTotal);
     }
 
 })();
