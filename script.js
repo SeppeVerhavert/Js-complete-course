@@ -26,8 +26,11 @@
         "cherry",
     ];
 
-    document.getElementById('run').addEventListener('click', getElement);
-    function getElement() {
-        console.log(fruits[3]);
+    document.getElementById('run').addEventListener('click', transformArray);
+    function transformArray() {
+        fruits.shift();
+        fruits.pop();
+        fruits.unshift("banana");
+        fruits.push("kiwi");
     }
 })();
