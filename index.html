@@ -1,7 +1,7 @@
 <!--
  * becode/javascript
  *
- * /04-dates/04-locale-date/index.html - 4.4: date textuelle
+ * /04-dates/05-get-spooky-fridays/index.html - 4.5: calcul des vendredi 13
  *
  * coded by leny@BeCode
  * started at 26/10/2018
@@ -10,7 +10,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>BeCode/JavaScript - 4.4: textual date</title>
+        <title>BeCode/JavaScript - 4.5: calculate the friday 13</title>
 
         <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
         <link rel="stylesheet" href="../../_shared/css/normalize.css" />
@@ -21,17 +21,26 @@
             <header>
                 <h1>BeCode / JavaScript</h1>
                 <h2>
-                    <span>4.4</span>
-                    <strong>textual date</strong>
+                    <span>4.5</span>
+                    <strong>calculate the friday 13</strong>
                 </h2>
             </header>
             <div class="content">
                 <section class="explain">
-                    <p>Change the content of the indicated tag by the date of today, in English (ex : Sunday 28 October 2018, 23h32).</p>
+                    <p>When you click the button, display each month of the specified year that has a Friday 13th.</p>
                 </section>
                 <section class="material">
-                    <p id="target">Change me !</p>
+                    <form action="#" method="post">
+                        <div class="field">
+                            <label for="year">Year:</label>
+                            <input type="text" name="year" id="year" />
+                        </div>
+                        <div class="actions">
+                            <button type="button" id="run">Run the script</button>
+                        </div>
+                    </form>
                 </section>
+
             </div>
         </div>
 
