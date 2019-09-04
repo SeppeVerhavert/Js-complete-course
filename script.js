@@ -28,8 +28,8 @@
 
     document.getElementById('run').addEventListener('click', loopArray);
     function loopArray() {
-        for (let i = 0; i < fruits.length; i++) {
-            console.log(fruits[i]);
-        }
+        fruits.forEach(element => {
+            console.log(element)
+        });
     }
 })();
