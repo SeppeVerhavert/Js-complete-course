@@ -1,6 +1,6 @@
 /* becode/javascript
  *
- * /03-colors/01-change-bcg-one/script.js - 3.1: couleur de fond (1)
+ * /04-dates/01-title-by-hour-one/script.js - 4.1: texte en fonction de l'heure (1)
  *
  * coded by leny@BeCode
  * started at 26/10/2018
@@ -10,21 +10,15 @@
 // You will have time to focus on it later.
 
 (function() {
-    document.getElementById('run').addEventListener('click', changeColor);
-    let html = document.getElementsByTagName('html')[0];
-    let colorArray = [];
 
-    function changeColor() {
-        generateRandomColor();
-        let color = "rgb(" + colorArray[0] + "," + colorArray[1] + "," + colorArray[2] + ")";
-        html.style.background = color;
+    let target = document.getElementById('target');
+    let newDate = new Date();
+    let hours = newDate.getHours();
+
+    if (hours < 18) {
+        target.innerHTML = "Hello";
+    } else {
+        target.innerHTML = "Good evening";
     }
 
-    function generateRandomColor() {
-        colorArray = [];
-        for (let x = 0; x < 3; x++) {
-            let newcolor = Math.floor(Math.random()*255)
-            colorArray.push(newcolor);
-        }
-    }
 })();
