@@ -12,13 +12,14 @@
 (function() {
 
     let target = document.getElementById('target');
-    let newDate = new Date();
+    let newDate = new Date('March 13, 08 17:20');
     let hours = newDate.getHours();
+    let minutes = newDate.getMinutes();
 
-    if (hours < 18) {
-        target.innerHTML = "Hello";
-    } else {
+    if (hours >= 17 && minutes >= 30 || hours >= 18) {
         target.innerHTML = "Good evening";
+    } else {
+        target.innerHTML = "Hello";
     }
 
 })();
