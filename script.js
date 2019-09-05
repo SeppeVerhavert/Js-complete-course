@@ -11,29 +11,48 @@
 
 (function() {
 
-    var fruits = [
-        "apple",
-        "perry",
-        "strawberry",
-        "tomato",
-        "kiwi",
-        "banana",
-        "orange",
-        "mandarin",
-        "durian",
-        "peach",
-        "grapes",
-        "cherry",
-    ];
+    document.getElementById('run').addEventListener('click', generateStatistics);
 
-    document.getElementById('run').addEventListener('click', checkApple);
-
-    function checkApple(){
-        if(fruits.indexOf("apple")>=0){
-            console.log("yes");
-        } else {
-            console.log("no");
-        }
+    let newArray = [];
+    function generateStatistics(){
+        generateArray();
+        getStatistics();
     }
 
+    function generateArray(){
+        newArray = [];
+        for(let x=0;x<10;x++){
+            let newNumber = Math.floor(Math.random()*100)
+            newArray.push(newNumber);
+            document.getElementById("n-"+(x+1)).innerHTML = newNumber;
+        }
+        console.log(newArray);
+    }
+
+    function getStatistics(){
+        smallNumber();
+        bigNumber();
+        sumOfNumbers();
+        averageOfNumbers();
+    }
+
+    function smallNumber(){
+        let smallest = Math.min(...newArray);
+        document.getElementById("min").innerHTML = smallest;
+    }
+
+    function bigNumber(){
+        let largest = Math.max(...newArray);
+        document.getElementById("max").innerHTML = largest;
+    }
+
+    function sumOfNumbers(){
+        let sum = newArray.reduce((a,b) => a+b);
+        document.getElementById("sum").innerHTML = sum;
+    }
+
+    function averageOfNumbers(){
+        let avg = Math.floor(newArray.reduce((a,b) => a+b)/newArray.length);
+        document.getElementById("average").innerHTML = avg;
+    }
 })();
