@@ -1,6 +1,6 @@
 /* becode/javascript
  *
- * /05-arrays/01-get-element/script.js - 5.1: élément de tableau
+ * /05-arrays/07-filter-array/script.js - 5.7: filtrer un tableau
  *
  * coded by leny@BeCode
  * started at 26/10/2018
@@ -9,94 +9,97 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function () {
+(function() {
 
     var people = [
         {
-            firstname: "Bradford",
-            lastname: "Coldbath",
-            email: "bcoldbath0@wired.com",
+            firstname: "Dreddy",
+            lastname: "Nussgen",
+            age: 70,
         },
         {
-            firstname: "Nadiya",
-            lastname: "Stendell",
-            email: "nstendell1@nsw.gov.au",
+            firstname: "Yves",
+            lastname: "Sear",
+            age: 49,
         },
         {
-            firstname: "Auroora",
-            lastname: "Stapford",
-            email: "astapford2@wsj.com",
+            firstname: "Marcel",
+            lastname: "Cowderay",
+            age: 59,
         },
         {
-            firstname: "Berkley",
-            lastname: "McKall",
-            email: "bmckall3@about.me",
+            firstname: "Dag",
+            lastname: "Binnall",
+            age: 31,
         },
         {
-            firstname: "Wolf",
-            lastname: "McCurley",
-            email: "wmccurley4@yale.edu",
+            firstname: "Horten",
+            lastname: "Claesens",
+            age: 75,
         },
         {
-            firstname: "Jorrie",
-            lastname: "Canedo",
-            email: "jcanedo5@engadget.com",
+            firstname: "Charmian",
+            lastname: "Harnes",
+            age: 10,
         },
         {
-            firstname: "Bethanne",
-            lastname: "Ackred",
-            email: "backred6@imgur.com",
+            firstname: "Sean",
+            lastname: "Littlejohns",
+            age: 37,
         },
         {
-            firstname: "Zorah",
-            lastname: "Whild",
-            email: "zwhild7@sogou.com",
+            firstname: "Hazlett",
+            lastname: "Sprouls",
+            age: 87,
         },
         {
-            firstname: "Jean",
-            lastname: "Dupont",
-            email: "jdupont@elpais.com",
+            firstname: "Marcel",
+            lastname: "Hasted",
+            age: 66,
         },
         {
-            firstname: "Zulema",
-            lastname: "Ericsson",
-            email: "zericsson9@ed.gov",
+            firstname: "Cary",
+            lastname: "Summerson",
+            age: 15,
         },
         {
-            firstname: "Brady",
-            lastname: "Scrannage",
-            email: "bscrannagea@google.fr",
+            firstname: "Feodor",
+            lastname: "Ollett",
+            age: 56,
         },
         {
-            firstname: "Isidore",
-            lastname: "Korf",
-            email: "ikorfb@google.com",
+            firstname: "Kelly",
+            lastname: "Ranahan",
+            age: 62,
         },
         {
-            firstname: "Bartholomew",
-            lastname: "Stockbridge",
-            email: "bstockbridgec@is.gd",
+            firstname: "Madelene",
+            lastname: "Davie",
+            age: 14,
         },
         {
-            firstname: "Laney",
-            lastname: "O' Mara",
-            email: "lomarad@forbes.com",
+            firstname: "Bent",
+            lastname: "Karpe",
+            age: 82,
         },
         {
-            firstname: "Gabe",
-            lastname: "Keatch",
-            email: "gkeatche@google.fr",
+            firstname: "Reinaldo",
+            lastname: "Grimbleby",
+            age: 81,
         },
     ];
 
-    document.getElementById('run').addEventListener('click', findInArray);
-    function findInArray() {
-        people.find(name);
+    document.getElementById('run').addEventListener('click', createArray);
+    let newArray = [];
+    function createArray() {
+        people.find(age);
+        console.log(newArray);
     }
-    function name(element) {
-        if (element.firstname === "Jean" && element.lastname === "Dupont") {
-            console.log(element.email);
-            console.log(people.indexOf(element));
+
+    function age(element){
+        if (element.age >= 18){
+            newArray.push(element);
         }
     }
+
 })();
