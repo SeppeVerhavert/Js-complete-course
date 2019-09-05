@@ -13,36 +13,90 @@
 
     var people = [
         {
-            firstname: "Garald",
-            lastname: "Freschi",
-            email: "gfreschi0@discuz.net",
+            firstname: "Bradford",
+            lastname: "Coldbath",
+            email: "bcoldbath0@wired.com",
         },
         {
-            firstname: "Bendicty",
-            lastname: "Foster-Smith",
-            email: "bfostersmith1@mysql.com",
+            firstname: "Nadiya",
+            lastname: "Stendell",
+            email: "nstendell1@nsw.gov.au",
         },
         {
-            firstname: "Michelle",
-            lastname: "Draude",
-            email: "mdraude2@csmonitor.com",
+            firstname: "Auroora",
+            lastname: "Stapford",
+            email: "astapford2@wsj.com",
         },
         {
-            firstname: "Cathee",
-            lastname: "Meineck",
-            email: "cmeineck3@t-online.de",
+            firstname: "Berkley",
+            lastname: "McKall",
+            email: "bmckall3@about.me",
         },
         {
-            firstname: "Marianna",
-            lastname: "Coal",
-            email: "mcoal4@creativecommons.org",
+            firstname: "Wolf",
+            lastname: "McCurley",
+            email: "wmccurley4@yale.edu",
+        },
+        {
+            firstname: "Jorrie",
+            lastname: "Canedo",
+            email: "jcanedo5@engadget.com",
+        },
+        {
+            firstname: "Bethanne",
+            lastname: "Ackred",
+            email: "backred6@imgur.com",
+        },
+        {
+            firstname: "Zorah",
+            lastname: "Whild",
+            email: "zwhild7@sogou.com",
+        },
+        {
+            firstname: "Jean",
+            lastname: "Dupont",
+            email: "jdupont@elpais.com",
+        },
+        {
+            firstname: "Zulema",
+            lastname: "Ericsson",
+            email: "zericsson9@ed.gov",
+        },
+        {
+            firstname: "Brady",
+            lastname: "Scrannage",
+            email: "bscrannagea@google.fr",
+        },
+        {
+            firstname: "Isidore",
+            lastname: "Korf",
+            email: "ikorfb@google.com",
+        },
+        {
+            firstname: "Bartholomew",
+            lastname: "Stockbridge",
+            email: "bstockbridgec@is.gd",
+        },
+        {
+            firstname: "Laney",
+            lastname: "O' Mara",
+            email: "lomarad@forbes.com",
+        },
+        {
+            firstname: "Gabe",
+            lastname: "Keatch",
+            email: "gkeatche@google.fr",
         },
     ];
 
-    document.getElementById('run').addEventListener('click', loopArray);
-    function loopArray() {
-        people.forEach(element => {
-            console.log(element.firstname + " " + element.lastname);
-        });
+    document.getElementById('run').addEventListener('click', findInArray);
+    function findInArray() {
+        people.find(name);
+    }
+    function name(element) {
+        if (element.firstname === "Jean" && element.lastname === "Dupont") {
+            console.log(element.email);
+            console.log(people.indexOf(element));
+        }
     }
 })();
